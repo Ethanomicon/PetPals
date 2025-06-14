@@ -1,0 +1,427 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: linear-gradient(135deg, #e0e7ff 0%, #fffde4 100%);
+  background-image: url('img/BG.gif');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+
+header {
+  background: #3e2f84;
+  color: #fff;
+  padding: 1.5rem 1rem 1rem 1rem;
+  text-align: center;
+  border-bottom: 3px solid #b39ddb;
+  position: relative;
+  z-index: 10;
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+nav {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  background: rgba(126, 87, 194, 0.0);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 0.5rem 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1.2rem;
+  font-weight: 700;
+  position: relative;
+  padding: 0.3em 0.7em;
+  border-radius: 6px;
+  transition: 
+    background 0.24s,
+    color 0.24s,
+    box-shadow 0.24s;
+}
+
+nav a:hover,
+nav a:focus {
+  background: #ede7f6;
+  color: #7e57c2;
+  box-shadow: 0 4px 14px 0 rgba(126,87,194,0.15);
+  outline: none;
+}
+
+@media (max-width: 650px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.3rem 0;
+  }
+  nav a {
+    margin: 0 0.4rem;
+  }
+}
+
+/* Main and section styling for consistency */
+main {
+  max-width: 1050px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+section {
+  background: #fafaff;
+  border-radius: 1em;
+  margin-bottom: 2rem;
+  padding: 1.2em 1.7em 1.2em 1.7em;
+  box-shadow: 0 2px 12px 0 rgba(126, 87, 194, 0.10);
+}
+
+/* Profile form */
+#create-profile-section {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(126, 87, 194, 0.09);
+  padding: 2rem 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+#create-profile-section h2 {
+  margin-top: 0;
+  color: #7e57c2;
+  font-size: 1.5rem;
+  margin-bottom: 1.3rem;
+}
+
+form#createProfileForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem 2rem;
+}
+
+.form-row {
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+  color: #4b3d7c;
+}
+
+.form-row input,
+.form-row select {
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #a8a2c7;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+form button[type="submit"] {
+  background: #7e57c2;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.7rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 10px rgba(66, 165, 245, 0.1);
+  transition: background 0.17s;
+}
+form button[type="submit"]:hover {
+  background: #4b3d7c;
+}
+
+/* Pet Profiles List */
+#profiles-section {
+  margin-bottom: 3rem;
+}
+
+#profiles-section h2 {
+  font-size: 1.4rem;
+  color: #7e57c2;
+  margin-bottom: 1.3rem;
+  font-weight: 700;
+}
+
+/* Pet Profiles Section - Responsive & Scrollbar */
+.profiles-scroll-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  gap: 0;
+  background: linear-gradient(90deg, #ede7f6 0%, #e3f2fd 100%);
+  border-radius: 1em;
+  padding: 0.5rem 0.1rem;
+}
+
+.scroll-btn {
+  background: #7e57c2;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.7rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 10px 0 rgba(126, 87, 194, 0.13);
+  z-index: 2;
+  opacity: 0.92;
+  margin: 0 8px;
+  flex-shrink: 0;
+}
+.scroll-btn:hover, .scroll-btn:focus {
+  background: #ede7f6;
+  color: #7e57c2;
+  box-shadow: 0 0 0 2px #7e57c244;
+}
+
+.profiles-list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.2rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scrollbar-width: thick;
+  scrollbar-color: #7e57c2 #e1bee7;
+  background: transparent;
+  border-radius: 1em;
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for profiles-list */
+.profiles-list::-webkit-scrollbar {
+  height: 14px;
+}
+.profiles-list::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #7e57c2 40%, #42a5f5 100%);
+  border-radius: 8px;
+  border: 3px solid #ede7f6;
+}
+.profiles-list::-webkit-scrollbar-track {
+  background: #ede7f6;
+  border-radius: 1em;
+}
+
+.profile-card {
+  background: linear-gradient(120deg, #fff, #ede7f6 80%);
+  border-radius: 1em;
+  padding: 1.2em 1em 1em 1em;
+  box-shadow: 0 1px 8px 0 rgba(33, 33, 33, 0.08);
+  width: 220px;
+  min-width: 220px;
+  text-align: center;
+  flex-shrink: 0;
+  margin-bottom: 0.5em;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.profile-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px 0 rgba(66, 165, 245, 0.19);
+}
+.profile-card img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.8em;
+  border: 3px solid #7e57c2;
+  background: #fff;
+  transition: box-shadow 0.2s;
+}
+.profile-card h3 {
+  margin: 0.3em 0 0.6em 0;
+  color: #7e57c2;
+  font-weight: 700;
+}
+.profile-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.99em;
+}
+
+/* Responsive breakpoints for cards */
+@media (max-width: 1100px) {
+  .profile-card {
+    width: 185px;
+    min-width: 185px;
+  }
+}
+
+@media (max-width: 900px) {
+  main {
+    max-width: 100%;
+  }
+  .profiles-scroll-container {
+    padding: 0.3rem 0.05rem;
+  }
+  .profile-card {
+    width: 155px;
+    min-width: 155px;
+    padding: 1em 0.5em 0.7em 0.5em;
+  }
+}
+
+@media (max-width: 650px) {
+  section {
+    padding: 1em 0.4em;
+  }
+  main {
+    padding: 1.1rem 0.2rem;
+  }
+  nav a {
+    margin: 0 0.4rem;
+  }
+  .profiles-scroll-container {
+    padding: 0.2rem 0;
+  }
+  .scroll-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+    margin: 0 1px;
+  }
+  .profiles-list {
+    gap: 0.4rem;
+    padding: 0.5rem 0;
+  }
+  .profile-card {
+    width: 120px;
+    min-width: 120px;
+    padding: 0.7em 0.3em 0.5em 0.3em;
+  }
+  .profile-card img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Scroll-to-top button (if you use one) */
+#scrollToTopBtn {
+  position: fixed;
+  right: 2.2rem;
+  bottom: 2.2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7e57c2 60%, #42a5f5 100%);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  box-shadow: 0 6px 24px rgba(66, 165, 245, 0.22);
+  cursor: pointer;
+  display: none;
+  z-index: 99;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, opacity 0.2s;
+  opacity: 0.9;
+}
+#scrollToTopBtn:hover,
+#scrollToTopBtn:focus {
+  background: #ede7f6;
+  color: #7e57c2;
+  outline: none;
+  opacity: 1;
+}
+
+/* Smaller button on mobile */
+@media (max-width: 650px) {
+  #scrollToTopBtn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.3rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+#scrollToTopBtn {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7e57c2 60%, #42a5f5 100%);
+  color: #fff;
+  border: none;
+  font-size: 2.2rem;
+  box-shadow: 0 6px 24px rgba(66, 165, 245, 0.22);
+  cursor: pointer;
+  display: block;
+  z-index: 999;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, opacity 0.2s, visibility 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+#scrollToTopBtn.visible {
+  opacity: 0.95;
+  visibility: visible;
+  pointer-events: auto;
+}
+#scrollToTopBtn:hover,
+#scrollToTopBtn:focus {
+  background: #ede7f6;
+  color: #7e57c2;
+  outline: none;
+  opacity: 1;
+}
+@media (max-width: 650px) {
+  #scrollToTopBtn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.3rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+/* Footer styling */
+footer {
+  display: flex;
+  border-top: 3px solid #b39ddb;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.2rem 0;
+  background: #3e2f84;
+  color: #fff;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Optional: Hide scrollbars on touch devices for aesthetics */
+@media (hover: none) and (pointer: coarse) {
+  .profiles-list {
+    scrollbar-width: none;
+  }
+  .profiles-list::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+

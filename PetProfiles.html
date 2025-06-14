@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pet Profiles | PetPals</title>
+  <link rel="stylesheet" href="PetProfiles.css">
+</head>
+<body>
+  <header>
+    <h1>🐾 PetPals: Companion Animal Network</h1>
+       <nav>
+	  <a href="index.html">Home</a>
+      <a href="PetProfiles.html">Pet Profiles</a>
+      <a href="#alerts">Lost &amp; Found</a>
+      <a href="#services">Pet Hotlines</a>
+      <a href="#events">Events</a>
+      <a href="#articles">Pet Care Tips</a>
+	  <a href="#teams">PetPals Team</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Profile Create Form -->
+    <section id="create-profile-section">
+      <h2>Create a Pet Profile</h2>
+      <form id="createProfileForm" autocomplete="off">
+        <div class="form-row">
+          <label for="petName">Name</label>
+          <input id="petName" name="petName" type="text" required>
+        </div>
+        <div class="form-row">
+          <label for="species">Species</label>
+          <select id="species" name="species" required>
+            <option value="">Choose What Pet</option>
+            <option value="Dog">Dog</option>
+            <option value="Cat">Cat</option>
+          </select>
+        </div>
+          <div class="form-row">
+            <label for="breed">Breed</label>
+            <select id="breed" name="breed" required>
+            <option value="">Choose a breed...</option>
+       <!-- Options will be populated by JS -->
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="sex">Sex</label>
+          <select id="sex" name="sex" required>
+            <option value="">Choose...</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="age">Age</label>
+          <input id="age" name="age" type="number" min="0" max="15" required>
+        </div>
+        <div class="form-row">
+          <label for="medical">Medical</label>
+          <input id="medical" name="medical" type="text" required placeholder="e.g. Vaccinated">
+        </div>
+        <div class="form-row">
+          <label for="photo">Photo</label>
+          <input id="photo" name="photo" type="file" accept="image/*">
+        </div>
+        <button type="submit">Add Profile</button>
+      </form>
+    </section>
+
+    <!-- Pet Profiles List -->
+    <section id="profiles-section">
+      <h2>All Pet Profiles</h2>
+      <div class="profiles-list" id="profilesList">
+        <!-- Pet profiles will be rendered here -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 PetPals. Protecting Pets | Providing Peace | Promoting Placement.</p>
+  </footer>
+
+  <script src="pet-profiles.js"></script>
+</body>
+</html>
